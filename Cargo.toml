@@ -14,3 +14,7 @@ serde_json = "1.0.61"
 serde_derive = "1.0.119"
 tokio = { version = "1.12", features = ["full"] }
 mongodb = "2.0"
+rocket = { version = "0.5.0-rc.1", features = ["json"]}
+
+[dev-dependencies]
+rand = "0.8"

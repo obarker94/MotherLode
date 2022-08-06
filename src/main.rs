@@ -1,15 +1,12 @@
-use std::io;
+#[macro_use] extern crate rocket;
 
-fn main() {
-       println!("Guess the number!");
+#[get("/world")]
+fn world() -> &'static str {
+    "Hello, world!"
+}
 
-    println!("Please input your guess.");
-
-    let mut guess = String::new();
-
-    io::stdin()
-        .read_line(&mut guess)
-        .expect("Failed to read line");
-
-    println!("You guessed: {guess}");
+#[launch]
+fn rocket() -> _ {
+    rocket::build()
+    .mount("/hello", routes![world])
 }
